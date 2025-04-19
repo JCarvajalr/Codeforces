@@ -6,25 +6,32 @@
 
 using namespace std;
 void solve() {
-    int n, m, a;
-    unsigned int i;
+    int n, a, i;
+    
     string line;
     cin >> n;
     cin >> line;
-
-    vector<int> comb;
-    comb.push_back(1);
+    
+    deque<int> comb;
+    deque<int> range;
+    _for(n) {
+        range.push_back(i+1);
+    }
     a = 0;
-    for (i = 0; i < line.size(); i++) {
+    
+    for (i = n-2; i >= 0; i--) {
         if (line[i] == '<') {
-            comb.insert(comb.begin() + a, i+2);
+            comb.push_front(range.front());
+            range.pop_front();
         } else {
-            a = i+1;
-            comb.push_back(i+2);
+            comb.push_front(range.back());
+            range.pop_back();
         }
     }
-    _for(comb.size()) {
-        cout << comb[i] << " ";
+    comb.push_front(range.front());
+
+    for(int item: comb) {
+        cout << item << " ";
     } cout << endl;
     
 }
