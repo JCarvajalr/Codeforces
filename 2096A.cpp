@@ -1,4 +1,4 @@
-// A. Line Breaks
+// A. Wonderful Sticks
 #include <bits/stdc++.h>
 #define fastread() (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 #define ll long long
@@ -6,34 +6,27 @@
 
 using namespace std;
 void solve() {
-    int n, a, i;
-    
+    int n, i;
     string line;
     cin >> n;
     cin >> line;
     
     deque<int> comb;
-    deque<int> range;
-    _for(n) {
-        range.push_back(i+1);
-    }
-    a = 0;
     
+    int l = 1, r = n;
     for (i = n-2; i >= 0; i--) {
         if (line[i] == '<') {
-            comb.push_front(range.front());
-            range.pop_front();
+            comb.push_front(l++);
         } else {
-            comb.push_front(range.back());
-            range.pop_back();
+            comb.push_front(r--);
         }
     }
-    comb.push_front(range.front());
+    comb.push_front(l);
 
     for(int item: comb) {
         cout << item << " ";
     } cout << endl;
-    
+
 }
 
 int main() {
@@ -41,6 +34,5 @@ int main() {
     int test;
     cin >> test;
     while (test--) solve();
-
     return 0;
 }
