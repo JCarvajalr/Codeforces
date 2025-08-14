@@ -1,4 +1,4 @@
-// E. Adjacent XOR
+// E. Adjacent XOR1
 #include <bits/stdc++.h>
 #define fastread() (ios_base:: sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL))
 #define ll long long
