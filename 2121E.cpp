@@ -11,19 +11,16 @@
 
 using namespace std;
 void solve() {
-    string l, r;
+    int l, r;
     cin >> l >> r;
-
-    int res = 0, temp;
-    for (size_t i = 0; i < l.size(); i++) {
-        temp = r[i] - l[i];
-        if (temp == 0) res += 2;
-        else if (temp == -9) res++;
-        else if (temp == 1) res++;
-        else if (temp > -9) break;
+    int res = 0, t;
+    while (l) {
+        t = r - l;
+        if (t == 0) res += 2;
+        else if (t == 1) res++;        
+        l /= 10, r /= 10;
     }
-    cout << res;
-    
+    cout << res << endl;
 }
 
 int main() {
