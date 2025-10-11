@@ -9,8 +9,6 @@
 #define debArr(array) cout << "  /:" << #array << "[] = "; for (int I = 0; I < (int) array.size(); I++) cout << array[I] << " "; cout << endl;
 #define sortAsc(vect) sort(vect.begin(), vect.end())
 #define sortDesc(vect) sort(vect.begin(), vect.end(), greater<int>())
-// int maxInt = INT_MAX;
-
 using namespace std;
 
 void solve() {
